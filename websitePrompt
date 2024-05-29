@@ -1,0 +1,50 @@
+Please build such a webspage with the following information.
+please make the website colorful and lively. Correct any typ or grammatical mistakes.
+1. title is "John Usher's Home-page". Put this in the center in large font.
+2. below put my email address: "yesjhon-at-gmail.com"
+3. link to linkedin page: https://www.linkedin.com/in/drjohnusher/
+4. link to github: https://github.com/johnusher
+
+6. Under the title of "Projects", show the followng:
+
+6.1 Title = "Loudspeaker design" Subtitle: "Carbon fibre active loudspeaker". Show a clickable thumbnail link to this video: https://www.youtube.com/watch?v=Stkl8KlzxmA
+
+6.2. Title = "Spatial audio pickup to control a beamformer". Show a clickable thumbnail link to this video: https://www.youtube.com/watch?v=L2qY9SO5M2M
+
+6.3: Title = "TWS Truly Wireless smart earphone design"
+
+6.4: Title = "Tinkering projects"
+Subtitle 1:  "Voice control of lights using chat-GPT API". Show a clickable thumbnail link to https://github.com/johnusher/light-chat (Thumbnail link should be this image: https://logowik.com/content/uploads/images/346_raspberry_pi_logo.jpg)
+Subtitle 1: "Magic wand using IMU to detect movement with CNN real-time detection". Show a clickable thumbnail link to https://github.com/johnusher/priWand.  Thumbnail link should be this image: 
+
+
+6.5: Title = "Science-fiction writing"
+
+5. Summary of experience: 
+
+John Usher is a humble (ish) pioneer of spatial audio enhancement algorithms for earphones and loudspeakers. He holds a B.Eng. in Electro-Acoustics from the University of Salford and a Ph.D. from McGill University, where he was advised by such Masters as: Dr. W.L. Martens; Prof. W. Woszczyk; Dr. J. Benesty and Prof. A. Bregman. 
+The Ph.D. introduced and characterised a new loudspeaker audio upmixing system, further developed for multichannel cinema audio at IMM sound, and now part of Dolby Atmos (patent #8,335,330).
+
+Dr Usher has conducted research at the acoustics department of Bang and Olufsen, the Audio DSP group at Philips Nat Lab, and has given talks at Google-X, University of Cambridge, McGill University, and NASA.
+
+John is an expert and pioneer in the field of Hearables: wearable electronic devices relating to sound. 
+In 2006 he joined a new company designing and building smart Hearables. At Techiya (originally Personics, then Techiya), he spent over 10 years conjuring a new earphone for hearing enhancement, augmented reality, hearing protection (dosimetry), music listening and voice communications: it was, arguably, the worlds first smart consumer earphone.
+
+John then co-founded a loudspeaker company. He engineered an all-carbon fibre high-end active loudspeaker. The design used a novel waveguide to direct sound towards a listening position, reducing colouration from room effects. The sound experience was commended by illustrious industry critics and musicians.
+
+He now works in the audio group at Synaptics, engineering next-generation telecommunications systems using classical DSP and the latest ML systems. 
+
+He is a keen tinkerer of electronics projects using Arduino and Raspberry Pi.
+
+Specialties:
+Audio enhancement with DSP and ML for noise reduction, dereverberation, AEC, automatic level control, spatial filtering. 
+Audio ML using RNN, CNN, U-Nets in Pytorch and Tensorflow with Onnx export.
+Psychoacoustics for loudspeakers and earphones: timbral, spatial fidelity optimization, situational awareness (passthrough).
+Low-latency audio DSP algorithms: ANC, echo-cancelling, beamforming, filtering, sound detection/ classification, sub-band processing, noise reduction, spatial filtering. 
+Dosimetry. 
+Room acoustics.
+Spatial audio upmixing. 
+Subjective sound quality evaluation for music and speech.
+Code: Matlab, C, Python,  assembly, Go.
+Patent drafting: 50+ patents on audio DSP.
+Excellent communication and independent project management skills.
