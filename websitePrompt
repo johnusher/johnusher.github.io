@@ -1,21 +1,21 @@
-Please build such a webspage with the following information.
-please make the website colorful and lively. Correct any typ or grammatical mistakes.
+Please build such a webspage using CSS with the following information.
+please make the website vibrant, colorful and lively but formal. Correct any typo or grammatical mistakes.
 1. title is "John Usher's Home-page". Put this in the center in large font.
 2. below put my email address: "yesjhon-at-gmail.com"
 3. link to linkedin page: https://www.linkedin.com/in/drjohnusher/
 4. link to github: https://github.com/johnusher
 
-6. Under the title of "Projects", show the followng:
+6. Under the title of "Projects", show the followng headings:
 
 6.1 Title = "Loudspeaker design" Subtitle: "Carbon fibre active loudspeaker". Show a clickable thumbnail link to this video: https://www.youtube.com/watch?v=Stkl8KlzxmA
 
-6.2. Title = "Spatial audio pickup to control a beamformer". Show a clickable thumbnail link to this video: https://www.youtube.com/watch?v=L2qY9SO5M2M
+6.2. Title = "Spatial audio pickup for beamforming". Show a clickable thumbnail link to this video: https://www.youtube.com/watch?v=L2qY9SO5M2M
 
-6.3: Title = "TWS Truly Wireless smart earphone design"
-
-6.4: Title = "Tinkering projects"
+6.3: Title = "Hearables and TWS Truly Wireless smart earphone design". Show a clickable thumbnail link to this: https://myemail.constantcontact.com/The-Audio-Voice-160--Challenges-and-Solutions-for-True-Wireless-Stereo-Earphones-.html?soid=1104292817535&aid=lKsduyTab8s
+ 
+6.4: Title = "Various Tinkering projects"
 Subtitle 1:  "Voice control of lights using chat-GPT API". Show a clickable thumbnail link to https://github.com/johnusher/light-chat (Thumbnail link should be this image: https://logowik.com/content/uploads/images/346_raspberry_pi_logo.jpg)
-Subtitle 1: "Magic wand using IMU to detect movement with CNN real-time detection". Show a clickable thumbnail link to https://github.com/johnusher/priWand.  Thumbnail link should be this image: 
+Subtitle 2: "Magic wand using IMU to detect movement with CNN real-time detection". Show a clickable thumbnail link to https://github.com/johnusher/priWand. 
 
 
 6.5: Title = "Science-fiction writing"
