@@ -2,8 +2,12 @@ Please a webpage using CSS with the following information. Create a single html 
 please make the website style vibrant, colorful and lively but formal. Correct any typo or grammatical errors, but do not abbreviate the information in the text.
 All images (including thumbnails) should be no larger than 1/3 of the screen.
 1. title is "John Usher's Homepage". Put this in the center in large black Courier font. The text should text highlighted with color #00ffc8.
-Beneath this title, on a new line, (add a line break) in smaller font, put this text summary in italics (include quote marks): ">20 years experience creating amazing new audio technologies" (put this font also in black font, with text highlighted with color #00ffc8.)
- Below the text is this image: https://github.com/johnusher/johnusher.github.io/blob/main/images/drjhon_banner.png?raw=true
+Beneath this title, on a new line, (add a line break) in smaller font, put this text summary in italics: a short 5-15 word summary of this webpage, summarizing the talents of the individual (John Usher).
+This text summary should be chosen at random from 10 possible sentences that have been pre-saved. 
+Such an example (which you should include) should be ">20 years experience creating amazing new audio technologies"
+ (put this font also in black font, with text highlighted with color #00ffc8.)
+ This text summary should be randomized when the page is re-loaded.
+ Below the text summary is this image: https://github.com/johnusher/johnusher.github.io/blob/main/images/drjhon_banner.png?raw=true this should strech to 75% of the width of the page.
  2. below put my email address: "yesjhon-at-gmail.com" with a hyper-linnk to the email address yesjhon-at-gmail.com
 3. link to linkedin page: https://www.linkedin.com/in/drjohnusher/ (put an arrow going left to right  before the text to show it is a link)
 4. link to github: https://github.com/johnusher (put an arrow going left to right before the text to show it is a link)
@@ -48,7 +52,7 @@ He now works in the audio group at Synaptics, engineering next-generation teleco
 
 He is a keen tinkerer of electronics projects using Arduino and Raspberry Pi.
 
-Specialties: (This should be a list)
+Specialties: (This should be a list, but do not show the list bullet-points)
 Audio enhancement with DSP and ML for noise reduction, dereverberation, AEC, automatic level control, spatial filtering. 
 Audio ML using RNN, CNN, U-Nets in Pytorch and Tensorflow with Onnx export.
 Psychoacoustics for loudspeakers and earphones: timbral, spatial fidelity optimization, situational awareness (passthrough).

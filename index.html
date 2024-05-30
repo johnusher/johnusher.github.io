@@ -7,134 +7,140 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
             color: black;
             text-align: center;
             margin: 0;
             padding: 0;
         }
-        header {
+        .header {
             background-color: #00ffc8;
             padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: fit-content;
         }
-        header h1 {
+        .header h1 {
             font-family: Courier, monospace;
-            font-size: 3em;
+            font-size: 48px;
             color: black;
             margin: 0;
         }
-        header p {
-            font-size: 1.2em;
+        .header p {
             font-style: italic;
             color: black;
-            margin: 5px 0 20px 0;
+            font-size: 18px;
+            margin: 5px 0;
         }
-        .highlight {
-            background-color: #00ffc8;
+        .banner {
+            width: 75%;
+            margin: 20px auto;
+            border-radius: 10px;
         }
-        img {
-            max-width: 33%;
-            height: auto;
-            margin: 20px 0;
-        }
-        a {
+        .contact-links a {
+            display: block;
             color: blue;
             text-decoration: none;
+            margin: 10px 0;
         }
-        a:hover {
-            text-decoration: underline;
+        .section-title {
+            font-size: 36px;
+            color: black;
+            margin: 40px 0 20px 0;
         }
-        .link-arrow::before {
-            content: "→ ";
-        }
-        section {
-            margin: 50px 0;
-        }
-        footer {
-            background-color: #00ffc8;
-            padding: 10px;
-            font-size: 0.8em;
-        }
-        .project, .experience, .specialties {
+        .project {
+            text-align: center;
             margin: 20px 0;
         }
-        .project img, .project iframe {
-            display: block;
-            margin: 10px auto;
+        .project img {
+            width: 33%;
+            border-radius: 10px;
+        }
+        .project-title {
+            font-size: 24px;
+            color: black;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-top: 2px solid #dee2e6;
+        }
+        .footer a {
+            color: blue;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1 class="highlight">John Usher's Homepage</h1>
-    <p class="highlight">">20 years experience creating amazing new audio technologies"</p>
-    <img src="https://github.com/johnusher/johnusher.github.io/blob/main/images/drjhon_banner.png?raw=true" alt="Dr. John Usher Banner">
-    <p><a href="mailto:yesjhon-at-gmail.com">yesjhon-at-gmail.com</a></p>
-    <p><a class="link-arrow" href="https://www.linkedin.com/in/drjohnusher/">LinkedIn Profile</a></p>
-    <p><a class="link-arrow" href="https://github.com/johnusher">GitHub Profile</a></p>
-</header>
-
-<section>
-    <h2>Projects:</h2>
-    <div class="project">
-        <h3>Loudspeaker design:</h3>
-        <p>Carbon fibre active loudspeaker</p>
-        <a href="https://www.youtube.com/watch?v=Stkl8KlzxmA"><img src="https://img.youtube.com/vi/Stkl8KlzxmA/0.jpg" alt="Loudspeaker design"></a>
+    <div class="header">
+        <h1>John Usher's Homepage</h1>
+        <p id="random-summary"></p>
     </div>
-    <div class="project">
-        <h3>Spatial audio pickup for beamforming:</h3>
-        <a href="https://www.youtube.com/watch?v=L2qY9SO5M2M"><img src="https://img.youtube.com/vi/L2qY9SO5M2M/0.jpg" alt="Spatial audio pickup"></a>
+    <img class="banner" src="https://github.com/johnusher/johnusher.github.io/blob/main/images/drjhon_banner.png?raw=true" alt="John Usher Banner">
+    <div class="contact-links">
+        <a href="mailto:yesjhon-at-gmail.com">yesjhon-at-gmail.com</a>
+        <a href="https://www.linkedin.com/in/drjohnusher/">→ LinkedIn Profile</a>
+        <a href="https://github.com/johnusher">→ GitHub Profile</a>
     </div>
-    <div class="project">
-        <h3>Hearables and TWS Truly Wireless smart earphone design:</h3>
-        <a href="https://myemail.constantcontact.com/The-Audio-Voice-160--Challenges-and-Solutions-for-True-Wireless-Stereo-Earphones-.html?soid=1104292817535&aid=lKsduyTab8s"><img src="https://techcrunch.com/wp-content/uploads/2015/08/screen-shot-2015-08-27-at-11-39-57-am.png?w=598" alt="Hearables design"></a>
+    <div class="projects">
+        <div class="section-title">Projects:</div>
+        <div class="project">
+            <h2 class="project-title">Loudspeaker design: <small>Carbon fibre active loudspeaker</small></h2>
+            <a href="https://www.youtube.com/watch?v=Stkl8KlzxmA"><img src="https://img.youtube.com/vi/Stkl8KlzxmA/0.jpg" alt="Loudspeaker design"></a>
+        </div>
+        <div class="project">
+            <h2 class="project-title">Spatial audio pickup for beamforming:</h2>
+            <a href="https://www.youtube.com/watch?v=L2qY9SO5M2M"><img src="https://img.youtube.com/vi/L2qY9SO5M2M/0.jpg" alt="Spatial audio pickup"></a>
+        </div>
+        <div class="project">
+            <h2 class="project-title">Hearables and TWS Truly Wireless smart earphone design:</h2>
+            <a href="https://myemail.constantcontact.com/The-Audio-Voice-160--Challenges-and-Solutions-for-True-Wireless-Stereo-Earphones-.html?soid=1104292817535&aid=lKsduyTab8s"><img src="https://techcrunch.com/wp-content/uploads/2015/08/screen-shot-2015-08-27-at-11-39-57-am.png?w=598" alt="Hearables and TWS"></a>
+        </div>
+        <div class="project">
+            <h2 class="project-title">Various fun projects</h2>
+            <h3>Control of lights using voice with Whisper-API and Chat-GPT API to generate Arduino code:</h3>
+            <a href="https://github.com/johnusher/light-chat"><img src="https://logowik.com/content/uploads/images/346_raspberry_pi_logo.jpg" alt="Control of lights using voice"></a>
+            <h3>Teaching kids to spell. A "magic" wand with IMU and GPS can detect the letter being spelt, using a custom CNN neural-net</h3>
+            <a href="https://github.com/johnusher/priWand"><img src="https://www.shutterstock.com/shutterstock/photos/2051644397/display_1500/stock-vector-magic-wand-with-golden-neon-glowing-shiny-spiral-trail-vector-illustration-2051644397.jpg" alt="Teaching kids to spell"></a>
+            <h3>Determining a guitar chord using a single microphone with low-latency (&lt;20 ms), ~90% reliable. This was a supervised learning algorithm that uses a generative model, specifically Gaussian Mixture Models (GMM) trained on Mel-Frequency Cepstral Coefficients (MFCC) features, for audio classification.</h3>
+        </div>
+        <div class="project">
+            <h2 class="project-title">Science-fiction writing:</h2>
+            <a href="https://github.com/johnusher/Node/blob/main/Node_280524.pdf"><img src="https://github.com/johnusher/Node/blob/main/images/cov%20Hedge%20black.png?raw=true" alt="Science-fiction writing"></a>
+        </div>
     </div>
-    <div class="project">
-        <h3>Various fun projects:</h3>
-        <p>Control of lights using voice with Whisper-API and Chat-GPT API to generate Arduino code:</p>
-        <a href="https://github.com/johnusher/light-chat"><img src="https://logowik.com/content/uploads/images/346_raspberry_pi_logo.jpg" alt="Control of lights using voice"></a>
-        <p>Teaching kids to spell. A "magic" wand with IMU and GPS can detect the letter being spelt, using a custom CNN neural-net:</p>
-        <a href="https://github.com/johnusher/priWand"><img src="https://www.shutterstock.com/shutterstock/photos/2051644397/display_1500/stock-vector-magic-wand-with-golden-neon-glowing-shiny-spiral-trail-vector-illustration-2051644397.jpg" alt="Magic wand for spelling"></a>
-        <p>Determining a guitar chord using a single microphone with low-latency (<20 ms), ~90% reliable. This was a supervised learning algorithm that uses a generative model, specifically Gaussian Mixture Models (GMM) trained on Mel-Frequency Cepstral Coefficients (MFCC) features, for audio classification.</p>
+    <div class="experience">
+        <div class="section-title">Experience:</div>
+        <p>John Usher is a humble (ish) pioneer of spatial audio enhancement algorithms for earphones and loudspeakers. He holds a B.Eng. in Electro-Acoustics from the University of Salford and a Ph.D. from McGill University, where he was advised by such Masters as: Dr. W.L. Martens; Prof. W. Woszczyk; Dr. J. Benesty and Prof. A. Bregman. The Ph.D. introduced and characterised a new loudspeaker audio upmixing system, further developed for multichannel cinema audio at IMM sound, and now part of Dolby Atmos (patent #8,335,330).</p>
+        <p>Dr Usher has conducted research at the acoustics department of Bang and Olufsen, the Audio DSP group at Philips Nat Lab, and has given talks at Google-X, University of Cambridge, McGill University, and NASA.</p>
+        <p>John is an expert and pioneer in the field of Hearables: wearable electronic devices relating to sound. In 2006 he joined a new company designing and building smart Hearables. At Techiya (originally Personics, then Techiya), he spent over 10 years conjuring a new earphone for hearing enhancement, augmented reality, hearing protection (dosimetry), music listening and voice communications: it was, arguably, the world's first smart consumer earphone.</p>
+        <p>John then co-founded a loudspeaker company. He engineered an all-carbon fibre high-end active loudspeaker. The design used a novel waveguide to direct sound towards a listening position, reducing coloration from room effects. The sound experience was commended by illustrious industry critics and musicians.</p>
+        <p>He now works in the audio group at Synaptics, engineering next-generation telecommunications systems using classical DSP and the latest ML systems. He is a keen tinkerer of electronics projects using Arduino and Raspberry Pi.</p>
     </div>
-    <div class="project">
-        <h3>Science-fiction writing:</h3>
-        <a href="https://github.com/johnusher/Node/blob/main/Node_280524.pdf"><img src="https://github.com/johnusher/Node/blob/main/images/cov%20Hedge%20black.png?raw=true" alt="Science-fiction writing"></a>
+    <div class="specialties">
+        <div class="section-title">Specialties:</div>
+        <p>Audio enhancement with DSP and ML for noise reduction, dereverberation, AEC, automatic level control, spatial filtering. Audio ML using RNN, CNN, U-Nets in Pytorch and Tensorflow with Onnx export. Psychoacoustics for loudspeakers and earphones: timbral, spatial fidelity optimization, situational awareness (passthrough). Low-latency audio DSP algorithms: ANC, echo-cancelling, beamforming, filtering, sound detection/ classification, sub-band processing, noise reduction, spatial filtering. Dosimetry. Room acoustics. Spatial audio upmixing. Subjective sound quality evaluation for music and speech. Code: Matlab, C, Python, assembly, Go. Patent drafting: 50+ patents on audio DSP. Excellent communication and independent project management skills. Leet Prompt Mashing.</p>
     </div>
-</section>
-
-<section>
-    <h2>Experience:</h2>
-    <p>John Usher is a humble (ish) pioneer of spatial audio enhancement algorithms for earphones and loudspeakers. He holds a B.Eng. in Electro-Acoustics from the University of Salford and a Ph.D. from McGill University, where he was advised by such Masters as: Dr. W.L. Martens; Prof. W. Woszczyk; Dr. J. Benesty and Prof. A. Bregman. The Ph.D. introduced and characterised a new loudspeaker audio upmixing system, further developed for multichannel cinema audio at IMM sound, and now part of Dolby Atmos (patent #8,335,330).</p>
-    <p>Dr Usher has conducted research at the acoustics department of Bang and Olufsen, the Audio DSP group at Philips Nat Lab, and has given talks at Google-X, University of Cambridge, McGill University, and NASA.</p>
-    <p>John is an expert and pioneer in the field of Hearables: wearable electronic devices relating to sound. In 2006 he joined a new company designing and building smart Hearables. At Techiya (originally Personics, then Techiya), he spent over 10 years conjuring a new earphone for hearing enhancement, augmented reality, hearing protection (dosimetry), music listening and voice communications: it was, arguably, the world's first smart consumer earphone.</p>
-    <p>John then co-founded a loudspeaker company. He engineered an all-carbon fibre high-end active loudspeaker. The design used a novel waveguide to direct sound towards a listening position, reducing colouration from room effects. The sound experience was commended by illustrious industry critics and musicians.</p>
-    <p>He now works in the audio group at Synaptics, engineering next-generation telecommunications systems using classical DSP and the latest ML systems.</p>
-    <p>He is a keen tinkerer of electronics projects using Arduino and Raspberry Pi.</p>
-</section>
-
-<section>
-    <h2>Specialties:</h2>
-    <ul>
-        <li>Audio enhancement with DSP and ML for noise reduction, dereverberation, AEC, automatic level control, spatial filtering.</li>
-        <li>Audio ML using RNN, CNN, U-Nets in Pytorch and Tensorflow with Onnx export.</li>
-        <li>Psychoacoustics for loudspeakers and earphones: timbral, spatial fidelity optimization, situational awareness (passthrough).</li>
-        <li>Low-latency audio DSP algorithms: ANC, echo-cancelling, beamforming, filtering, sound detection/ classification, sub-band processing, noise reduction, spatial filtering.</li>
-        <li>Dosimetry.</li>
-        <li>Room acoustics.</li>
-        <li>Spatial audio upmixing.</li>
-        <li>Subjective sound quality evaluation for music and speech.</li>
-        <li>Code: Matlab, C, Python, assembly, Go.</li>
-        <li>Patent drafting: 50+ patents on audio DSP.</li>
-        <li>Excellent communication and independent project management skills.</li>
-        <li>Leet Prompt Mashing.</li>
-    </ul>
-</section>
-
-<footer>
-    <p>This webpage was automatically generated using Chat-GPT-4 and this prompt: <a href="https://github.com/johnusher/johnusher.github.io/blob/main/websitePrompt">View prompt</a></p>
-</footer>
-
+    <div class="footer">
+        <p>This webpage was automatically generated using Chat-GPT-4 and this prompt: <a href="https://github.com/johnusher/johnusher.github.io/blob/main/websitePrompt">Prompt Link</a></p>
+    </div>
+    <script>
+        const summaries = [
+            ">20 years experience creating amazing new audio technologies",
+            "Expert in spatial audio enhancement and Hearables",
+            "Pioneer in smart earphone design and audio DSP",
+            "Innovator in next-gen telecommunications systems",
+            "Developer of audio upmixing for Dolby Atmos",
+            "Leader in audio ML and DSP technologies",
+            "Acoustic researcher with patents in audio DSP",
+            "Engineer of high-end active loudspeakers",
+            "Passionate about audio technology and ML",
+            "Specialist in noise reduction and spatial filtering",
+            "Creator of advanced audio enhancement algorithms",
+            "Experienced in psychoacoustics and room acoustics",
+            "Dedicated to advancing audio technology"
+        ];
+        document.getElementById("random-summary").innerText = summaries[Math.floor(Math.random() * summaries.length)];
+    </script>
 </body>
 </html>
