@@ -1,146 +1,401 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Usher's Homepage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #ffecd2, #fcb69f);
-            color: black;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: #00ffc8;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px auto;
-            width: fit-content;
-        }
-        .header h1 {
-            font-family: Courier, monospace;
-            font-size: 48px;
-            color: black;
-            margin: 0;
-        }
-        .header p {
-            font-style: italic;
-            color: black;
-            font-size: 18px;
-            margin: 5px 0;
-        }
-        .banner {
-            width: 75%;
-            margin: 20px auto;
-            border-radius: 10px;
-        }
-        .contact-links a {
-            display: block;
-            color: blue;
-            text-decoration: none;
-            margin: 10px 0;
-        }
-        .section-title {
-            font-size: 36px;
-            color: black;
-            margin: 40px 0 20px 0;
-        }
-        .project {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .project img {
-            width: 33%;
-            border-radius: 10px;
-        }
-        .project-title {
-            font-size: 24px;
-            color: black;
-        }
-        .footer {
-            background-color: #f8f9fa;
-            padding: 10px;
-            border-top: 2px solid #dee2e6;
-        }
-        .footer a {
-            color: blue;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>John Usher — sound · edge ai · ip</title>
+  <meta name="description" content="John Usher: 20 years engineering audio for the edge. Dolby Atmos, smart earphones, edge-AI speech. Lead Sound Engineer at Mimi.io.">
+  <meta property="og:title" content="John Usher">
+  <meta property="og:description" content="Audio for the edge. Dolby Atmos · TWS earphones · edge-AI speech enhancement.">
+  <meta property="og:image" content="https://github.com/johnusher/johnusher.github.io/blob/main/images/drjhon_banner.png?raw=true">
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="%230c0e16"/><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="%23c89860" stroke-width="0.7" opacity="0.6"/><text x="16" y="22" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-weight="700" font-size="13" fill="%23ffaa3b">JU</text></svg>'>
+  <style>
+    /* Korg Berlin / industrial — concrete, brushed steel, brass, amber phosphor.
+       Mobile-first; no external fonts. */
+    :root{
+      --bg-0:#0b0c12; --bg-1:#14161e; --bg-2:#1c1f2c;
+      --panel:#1f2230; --panel-edge:#06070b; --panel-up:#2a2d3d;
+      --steel:#525766; --steel-soft:#8a8f9e;
+      --brass:#c89860; --brass-hi:#e6b87a; --brass-lo:#7d5d35;
+      --amber:#ffaa3b; --amber-hot:#ffd07a;
+      --led-g:#b8ff36; --led-c:#4ddcff;
+      --text:#e8e6dd; --text-mute:#8a8d9a; --text-faint:#565a6a;
+      --r-sm:4px; --r-md:8px; --r-lg:14px;
+      --ease:cubic-bezier(.2,.8,.2,1);
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    }
+    *{ box-sizing:border-box; }
+    html, body{
+      margin:0; padding:0;
+      background:var(--bg-0); color:var(--text);
+      font-family:-apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, sans-serif;
+      font-size:15px; line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+    }
+    body{
+      min-height:100vh;
+      background:
+        radial-gradient(ellipse at 30% 0%, #1c2030 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 100%, #2a1d12 0%, transparent 50%),
+        linear-gradient(180deg, #0c0e16 0%, #14161e 60%, #0a0b11 100%);
+    }
+    body::after{
+      content:""; position:fixed; inset:0; pointer-events:none; z-index:1;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      mix-blend-mode:overlay; opacity:.55;
+    }
+    a{ color:var(--amber); text-decoration:none;
+       border-bottom:1px solid rgba(255,170,59,.25);
+       transition:color .2s var(--ease), border-color .2s var(--ease); }
+    a:hover{ color:var(--amber-hot); border-bottom-color:var(--amber-hot); }
+
+    .frame{ position:relative; z-index:2; max-width:880px;
+            margin:0 auto; padding:18px 16px 56px; }
+
+    /* ───── HEADER ───── */
+    .bar{
+      display:flex; align-items:center; gap:14px;
+      padding:14px 16px;
+      background:linear-gradient(180deg, #1d2030 0%, #14161e 100%);
+      border:1px solid var(--panel-edge); border-radius:var(--r-md);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 6px 18px rgba(0,0,0,.35);
+    }
+    .brand{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+    .logo{ font-family:var(--mono); font-weight:700;
+           font-size:18px; letter-spacing:.06em; color:var(--text); }
+    .logo .dot{ color:var(--amber); padding:0 2px; }
+    .tag{ font-size:11px; color:var(--text-mute);
+          letter-spacing:.06em; font-family:var(--mono); }
+    .bar-spacer{ flex:1; }
+    .bar-links{ display:none; gap:14px; font-size:12px; font-family:var(--mono); }
+    .bar-links a{ color:var(--text-mute); border-bottom:none;
+                  text-transform:uppercase; letter-spacing:.1em; }
+    .bar-links a:hover{ color:var(--amber); }
+    @media (min-width:560px){ .bar-links{ display:flex; } }
+
+    /* ───── HERO ───── */
+    .hero{
+      margin-top:14px; padding:22px 18px 20px;
+      background:linear-gradient(180deg, #1a1d2a 0%, #14161e 100%);
+      border:1px solid var(--panel-edge); border-radius:var(--r-md);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 8px 24px rgba(0,0,0,.4);
+    }
+    .hero h1{
+      margin:0 0 10px; font-size:22px; line-height:1.25;
+      font-weight:600; letter-spacing:-.005em;
+    }
+    .hero h1 em{ color:var(--brass-hi); font-style:normal; white-space:nowrap; }
+    .hero p{ margin:0; color:var(--text-mute); max-width:62ch; font-size:14px; }
+    .now{
+      margin-top:14px; display:inline-flex; align-items:center; gap:8px;
+      padding:7px 11px; background:#0e1018; border:1px solid #1f2230;
+      border-radius:var(--r-sm); font-size:12px; color:var(--text-mute);
+      font-family:var(--mono);
+    }
+    .now a{ color:var(--brass-hi); border-bottom-color:rgba(230,184,122,.3); }
+    .led{
+      width:7px; height:7px; border-radius:50%; background:var(--led-g);
+      box-shadow:0 0 6px var(--led-g), 0 0 12px var(--led-g);
+      animation:pulse 2.4s var(--ease) infinite;
+    }
+    @keyframes pulse{ 0%,100%{opacity:.45} 50%{opacity:1} }
+
+    /* ───── SECTION ───── */
+    section.panel{
+      margin-top:16px; padding:18px 16px;
+      background:linear-gradient(180deg, #1d2030 0%, #161824 100%);
+      border:1px solid var(--panel-edge); border-radius:var(--r-md);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.03), 0 6px 18px rgba(0,0,0,.35);
+    }
+    .panel-head{
+      display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+      margin-bottom:14px; padding-bottom:8px;
+      border-bottom:1px solid #0e1018;
+    }
+    .caption{
+      font-family:var(--mono); font-size:11px;
+      letter-spacing:.18em; text-transform:uppercase;
+      color:var(--brass);
+    }
+    .caption-sub{ font-size:11px; color:var(--text-faint); font-family:var(--mono); }
+
+    /* ───── PROJECTS ───── */
+    .projects{ display:grid; grid-template-columns:1fr; gap:12px; }
+    .project{
+      display:grid; grid-template-columns:1fr; gap:10px;
+      padding:14px; background:#14161e;
+      border:1px solid #0a0b11; border-radius:var(--r-sm);
+    }
+    .pj-head{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+    .project h3{ margin:0; font-size:15px; font-weight:600; color:var(--text); }
+    .pj-meta{ font-size:10.5px; color:var(--text-faint);
+              font-family:var(--mono); letter-spacing:.04em; text-transform:uppercase; }
+    .project p{ margin:0; font-size:14px; color:var(--text-mute); }
+    .pj-links{ display:flex; flex-wrap:wrap; gap:14px; font-size:13px; font-family:var(--mono); }
+    .project img{
+      width:100%; height:auto; max-height:340px; object-fit:cover;
+      border-radius:var(--r-sm); display:block; border:1px solid #0a0b11;
+    }
+    .project a.thumb{ border-bottom:none; display:block; }
+    .project.feature{
+      background:linear-gradient(180deg, #1a1d2a 0%, #14161e 100%);
+      border:1px solid #2a1d12;
+      box-shadow:inset 0 1px 0 rgba(255,170,59,.06);
+    }
+    .feature .pj-meta{ color:var(--brass); }
+
+    /* ───── TIMELINE ───── */
+    .timeline{ display:grid; gap:0; }
+    .t-item{
+      display:grid; grid-template-columns:1fr; gap:2px;
+      padding:10px 0; border-bottom:1px dashed #1f2230;
+    }
+    .t-item:last-child{ border-bottom:0; }
+    .t-when{
+      font-family:var(--mono); font-size:10.5px; color:var(--brass);
+      letter-spacing:.12em; text-transform:uppercase;
+    }
+    .t-what{ font-size:14px; color:var(--text); }
+    .t-what em{ color:var(--text-mute); font-style:normal; }
+    .t-what strong{ color:var(--text); font-weight:600; }
+    @media (min-width:560px){
+      .t-item{ grid-template-columns:90px 1fr; align-items:baseline; gap:14px; padding:8px 0; }
+    }
+
+    /* ───── TAGS ───── */
+    .tags{ display:flex; flex-wrap:wrap; gap:6px; }
+    .tag-pill{
+      font-family:var(--mono); font-size:11px; letter-spacing:.04em;
+      padding:5px 9px; border-radius:var(--r-sm);
+      background:#14161e; border:1px solid #2a2d3d; color:var(--text-mute);
+    }
+    .tag-pill.brass{ color:var(--brass); border-color:var(--brass-lo);
+                     background:rgba(200,152,96,.04); }
+
+    /* ───── CONTACT ───── */
+    .contact-row{
+      display:flex; flex-wrap:wrap; gap:14px 18px; font-size:14px; font-family:var(--mono);
+    }
+
+    /* ───── FOOTER ───── */
+    .footer{
+      margin-top:22px; padding:14px 16px; font-size:11px; line-height:1.6;
+      color:var(--text-faint); text-align:center;
+      font-family:var(--mono); letter-spacing:.02em;
+    }
+    .footer a{ color:var(--text-mute); border-bottom:none; }
+    .footer a:hover{ color:var(--brass); }
+
+    /* ───── DESKTOP ───── */
+    @media (min-width:720px){
+      .frame{ padding:28px 24px 72px; }
+      .hero{ padding:28px 26px 24px; }
+      .hero h1{ font-size:28px; }
+      .hero p{ font-size:15px; }
+      .projects{ grid-template-columns:1fr 1fr; }
+      .project.feature{ grid-column:1 / -1;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+        align-items:start; gap:18px; }
+      .project.feature .pj-meta{ display:inline; }
+    }
+    @media (min-width:960px){
+      .hero h1{ font-size:32px; }
+      .logo{ font-size:20px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <h1>John Usher's Homepage</h1>
-        <p id="random-summary"></p>
+<div class="frame">
+
+  <header class="bar">
+    <div class="brand">
+      <div class="logo">JOHN<span class="dot">·</span>USHER</div>
+      <div class="tag">sound · edge ai · ip</div>
     </div>
-    <img class="banner" src="https://github.com/johnusher/johnusher.github.io/blob/main/images/drjhon_banner.png?raw=true" alt="John Usher Banner">
-    <div class="contact-links">
-        <a href="mailto:yesjhon-at-gmail.com">yesjhon-at-gmail.com</a>
-        <a href="https://www.linkedin.com/in/drjohnusher/">→ LinkedIn Profile</a>
-        <a href="https://github.com/johnusher">→ GitHub Profile</a>
+    <div class="bar-spacer"></div>
+    <nav class="bar-links">
+      <a href="#projects">projects</a>
+      <a href="#track">track record</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Twenty years engineering audio for <em>the edge</em>. <em>Dolby Atmos.</em> <em>Smart earphones.</em> <em>On-device speech.</em></h1>
+    <p>Low-latency, low-power audio algorithms — classical DSP and modern ML — running where the silicon is small and the milliwatt budget is smaller. Principal inventor on patents shipped in billions of earphones.</p>
+    <div class="now">
+      <span class="led" aria-hidden="true"></span>
+      now: lead sound engineer @ <a href="https://mimi.io">mimi.io</a> &nbsp;·&nbsp; 50+ patents &nbsp;·&nbsp; plotting what's next
+    </div>
+  </div>
+
+  <section class="panel" id="projects">
+    <div class="panel-head">
+      <span class="caption">recent</span>
+      <span class="caption-sub">selected work · 2024 → today</span>
     </div>
     <div class="projects">
-        <div class="section-title">Projects:</div>
-        <div class="project">
-            <h2 class="project-title">Loudspeaker design: <small>Carbon fibre active loudspeaker</small></h2>
-            <a href="https://www.youtube.com/watch?v=Stkl8KlzxmA"><img src="https://img.youtube.com/vi/Stkl8KlzxmA/0.jpg" alt="Loudspeaker design"></a>
+
+      <article class="project feature">
+        <a class="thumb" href="https://johnusher.github.io/Arp8/">
+          <img loading="lazy" src="https://raw.githubusercontent.com/johnusher/Arp8/main/docs/hero.png"
+               alt="ARP8 — browser MIDI arpeggiator UI">
+        </a>
+        <div>
+          <div class="pj-head">
+            <h3>ARP8 — acoustic arpeggiator</h3>
+            <span class="pj-meta">2026 · web midi · javascript</span>
+          </div>
+          <p style="margin-top:8px">A browser MIDI arpeggiator for Korg Berlin's <strong style="color:var(--text)">phase8</strong> — the eight-voice acoustic synthesizer with steel resonators. Twenty-eight hand-authored generative compositions (Bach, Reich, Eno, Pärt, Cage, Satie&hellip;), each a different musical territory using one engine. Runs in Chrome over Web MIDI — no installer, no DAW.</p>
+          <div class="pj-links" style="margin-top:10px">
+            <a href="https://johnusher.github.io/Arp8/">→ live</a>
+            <a href="https://github.com/johnusher/Arp8">→ source</a>
+          </div>
         </div>
-        <div class="project">
-            <h2 class="project-title">Spatial audio pickup for beamforming:</h2>
-            <a href="https://www.youtube.com/watch?v=L2qY9SO5M2M"><img src="https://img.youtube.com/vi/L2qY9SO5M2M/0.jpg" alt="Spatial audio pickup"></a>
+      </article>
+
+      <article class="project">
+        <a class="thumb" href="https://www.youtube.com/watch?v=Stkl8KlzxmA">
+          <img loading="lazy" src="https://img.youtube.com/vi/Stkl8KlzxmA/maxresdefault.jpg"
+               alt="Carbon-fibre active loudspeaker">
+        </a>
+        <div class="pj-head">
+          <h3>Nautic Audio — carbon-fibre active loudspeaker</h3>
+          <span class="pj-meta">w/ Amon Tobin</span>
         </div>
-        <div class="project">
-            <h2 class="project-title">Hearables and TWS Truly Wireless smart earphone design:</h2>
-            <a href="https://myemail.constantcontact.com/The-Audio-Voice-160--Challenges-and-Solutions-for-True-Wireless-Stereo-Earphones-.html?soid=1104292817535&aid=lKsduyTab8s"><img src="https://techcrunch.com/wp-content/uploads/2015/08/screen-shot-2015-08-27-at-11-39-57-am.png?w=598" alt="Hearables and TWS"></a>
+        <p>Co-founded loudspeaker company. Engineered an all-carbon-fibre active tower with a novel waveguide aimed at the listening seat to suppress room coloration. Voiced in collaboration with composer / producer <strong style="color:var(--text)">Amon Tobin</strong>.</p>
+        <div class="pj-links">
+          <a href="https://www.youtube.com/watch?v=Stkl8KlzxmA">→ video</a>
+          <a href="https://www.amontobin.com/post/the-new-at-series-nautic-loudspeakers">→ amon's notes</a>
         </div>
-        <div class="project">
-            <h2 class="project-title">Various fun projects</h2>
-            <h3>Control of lights using voice with Whisper-API and Chat-GPT API to generate Arduino code:</h3>
-            <a href="https://github.com/johnusher/light-chat"><img src="https://logowik.com/content/uploads/images/346_raspberry_pi_logo.jpg" alt="Control of lights using voice"></a>
-            <h3>Teaching kids to spell. A "magic" wand with IMU and GPS can detect the letter being spelt, using a custom CNN neural-net</h3>
-            <a href="https://github.com/johnusher/priWand"><img src="https://www.shutterstock.com/shutterstock/photos/2051644397/display_1500/stock-vector-magic-wand-with-golden-neon-glowing-shiny-spiral-trail-vector-illustration-2051644397.jpg" alt="Teaching kids to spell"></a>
-            <h3>Determining a guitar chord using a single microphone with low-latency (&lt;20 ms), ~90% reliable. This was a supervised learning algorithm that uses a generative model, specifically Gaussian Mixture Models (GMM) trained on Mel-Frequency Cepstral Coefficients (MFCC) features, for audio classification.</h3>
+      </article>
+
+      <article class="project">
+        <div class="pj-head">
+          <h3>light-chat</h3>
+          <span class="pj-meta">go · whisper · gpt · arduino</span>
         </div>
-        <div class="project">
-            <h2 class="project-title">Science-fiction writing:</h2>
-            <a href="https://github.com/johnusher/Node/blob/main/Node_280524.pdf"><img src="https://github.com/johnusher/Node/blob/main/images/cov%20Hedge%20black.png?raw=true" alt="Science-fiction writing"></a>
+        <p>Speak a wish at a Raspberry Pi → Whisper transcribes → GPT writes a fresh Arduino sketch → the lights reprogram themselves. Conversational firmware, end-to-end.</p>
+        <div class="pj-links">
+          <a href="https://github.com/johnusher/light-chat">→ source</a>
         </div>
+      </article>
+
+      <article class="project">
+        <div class="pj-head">
+          <h3>ardpifi</h3>
+          <span class="pj-meta">go · pi · arduino · ad-hoc wifi</span>
+        </div>
+        <p>Programmable LED controller running across an ad-hoc Wi-Fi mesh of Pi + Arduino nodes. No router, no cloud — just peers.</p>
+        <div class="pj-links">
+          <a href="https://github.com/johnusher/ardpifi">→ source</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="pj-head">
+          <h3>Spatial pickup &amp; beamforming</h3>
+          <span class="pj-meta">video · archive</span>
+        </div>
+        <p>An older demo of microphone-array beamforming — picking out a single voice in a noisy room without losing the room.</p>
+        <div class="pj-links">
+          <a href="https://www.youtube.com/watch?v=L2qY9SO5M2M">→ video</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="pj-head">
+          <h3>Node — sci-fi novella</h3>
+          <span class="pj-meta">prose · 2024</span>
+        </div>
+        <p>Long-form fiction. Audio engineers do other things too.</p>
+        <div class="pj-links">
+          <a href="https://github.com/johnusher/Node/blob/main/Node_280524.pdf">→ pdf</a>
+          <a href="https://github.com/johnusher/Node">→ repo</a>
+        </div>
+      </article>
+
     </div>
-    <div class="experience">
-        <div class="section-title">Experience:</div>
-        <p>John Usher is a humble (ish) pioneer of spatial audio enhancement algorithms for earphones and loudspeakers. He holds a B.Eng. in Electro-Acoustics from the University of Salford and a Ph.D. from McGill University, where he was advised by such Masters as: Dr. W.L. Martens; Prof. W. Woszczyk; Dr. J. Benesty and Prof. A. Bregman. The Ph.D. introduced and characterised a new loudspeaker audio upmixing system, further developed for multichannel cinema audio at IMM sound, and now part of Dolby Atmos (patent #8,335,330).</p>
-        <p>Dr Usher has conducted research at the acoustics department of Bang and Olufsen, the Audio DSP group at Philips Nat Lab, and has given talks at Google-X, University of Cambridge, McGill University, and NASA.</p>
-        <p>John is an expert and pioneer in the field of Hearables: wearable electronic devices relating to sound. In 2006 he joined a new company designing and building smart Hearables. At Techiya (originally Personics, then Techiya), he spent over 10 years conjuring a new earphone for hearing enhancement, augmented reality, hearing protection (dosimetry), music listening and voice communications: it was, arguably, the world's first smart consumer earphone.</p>
-        <p>John then co-founded a loudspeaker company. He engineered an all-carbon fibre high-end active loudspeaker. The design used a novel waveguide to direct sound towards a listening position, reducing coloration from room effects. The sound experience was commended by illustrious industry critics and musicians.</p>
-        <p>He now works in the audio group at Synaptics, engineering next-generation telecommunications systems using classical DSP and the latest ML systems. He is a keen tinkerer of electronics projects using Arduino and Raspberry Pi.</p>
+  </section>
+
+  <section class="panel" id="track">
+    <div class="panel-head">
+      <span class="caption">track record</span>
+      <span class="caption-sub">where the work has shipped</span>
     </div>
-    <div class="specialties">
-        <div class="section-title">Specialties:</div>
-        <p>Audio enhancement with DSP and ML for noise reduction, dereverberation, AEC, automatic level control, spatial filtering. Audio ML using RNN, CNN, U-Nets in Pytorch and Tensorflow with Onnx export. Psychoacoustics for loudspeakers and earphones: timbral, spatial fidelity optimization, situational awareness (passthrough). Low-latency audio DSP algorithms: ANC, echo-cancelling, beamforming, filtering, sound detection/ classification, sub-band processing, noise reduction, spatial filtering. Dosimetry. Room acoustics. Spatial audio upmixing. Subjective sound quality evaluation for music and speech. Code: Matlab, C, Python, assembly, Go. Patent drafting: 50+ patents on audio DSP. Excellent communication and independent project management skills. Leet Prompt Mashing.</p>
+    <div class="timeline">
+
+      <div class="t-item">
+        <span class="t-when">now</span>
+        <span class="t-what"><strong>Mimi Hearing Technologies</strong> — leading sound engineering. Edge-AI voice clarity and personalised hearing on open-ear devices: on-device, low-latency (~4 ms), no cloud. Recent contributor to <em>"hearables with sound bubble"</em> in <em>Nature Electronics</em>.</span>
+      </div>
+
+      <div class="t-item">
+        <span class="t-when">2018→</span>
+        <span class="t-what">Audio group at <strong>Synaptics</strong> — next-generation telecoms DSP &amp; ML for speech enhancement.</span>
+      </div>
+
+      <div class="t-item">
+        <span class="t-when">2014→</span>
+        <span class="t-what">Co-founder, <strong>Nautic Audio</strong> — carbon-fibre active loudspeaker, voiced with Amon Tobin.</span>
+      </div>
+
+      <div class="t-item">
+        <span class="t-when">2006→16</span>
+        <span class="t-what"><strong>Personics / Techiya</strong> — principal inventor on what was, arguably, the world's first smart consumer earphone: hearing enhancement, AR, hearing protection, voice comms. Patents now shipped in <em>billions</em> of earphones.</span>
+      </div>
+
+      <div class="t-item">
+        <span class="t-when">2004→06</span>
+        <span class="t-what"><strong>IMM Sound → Dolby</strong> — co-developed the loudspeaker upmix algorithm now part of <strong>Dolby Atmos</strong> (US 8,335,330). Small, Oscar-winning technical team.</span>
+      </div>
+
+      <div class="t-item">
+        <span class="t-when">earlier</span>
+        <span class="t-what">Acoustics @ <strong>Bang &amp; Olufsen</strong> · audio DSP @ <strong>Philips Nat Lab</strong>. Talks at Google-X, NASA, Cambridge, McGill. <em>B.Eng. Salford · Ph.D. McGill — advised by Martens, Woszczyk, Benesty &amp; Bregman.</em></span>
+      </div>
+
     </div>
-    <div class="footer">
-        <p>This webpage was automatically generated using Chat-GPT-4 and this prompt: <a href="https://github.com/johnusher/johnusher.github.io/blob/main/websitePrompt">Prompt Link</a></p>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <span class="caption">capabilities</span>
+      <span class="caption-sub">what i ship</span>
     </div>
-    <script>
-        const summaries = [
-            ">20 years experience creating amazing new audio technologies",
-            "Expert in spatial audio enhancement and Hearables",
-            "Pioneer in smart earphone design and audio DSP",
-            "Innovator in next-gen telecommunications systems",
-            "Developer of audio upmixing for Dolby Atmos",
-            "Leader in audio ML and DSP technologies",
-            "Acoustic researcher with patents in audio DSP",
-            "Engineer of high-end active loudspeakers",
-            "Passionate about audio technology and ML",
-            "Specialist in noise reduction and spatial filtering",
-            "Creator of advanced audio enhancement algorithms",
-            "Experienced in psychoacoustics and room acoustics",
-            "Dedicated to advancing audio technology"
-        ];
-        document.getElementById("random-summary").innerText = summaries[Math.floor(Math.random() * summaries.length)];
-    </script>
+    <div class="tags">
+      <span class="tag-pill brass">edge-ai audio</span>
+      <span class="tag-pill brass">low-latency dsp</span>
+      <span class="tag-pill brass">smart earphone design</span>
+      <span class="tag-pill">speech enhancement</span>
+      <span class="tag-pill">noise reduction · de-reverb</span>
+      <span class="tag-pill">ANC · AEC · beamforming</span>
+      <span class="tag-pill">spatial audio &amp; upmixing</span>
+      <span class="tag-pill">transparency / passthrough</span>
+      <span class="tag-pill">psychoacoustics &amp; MOS</span>
+      <span class="tag-pill">dosimetry</span>
+      <span class="tag-pill">RNN · CNN · U-Net (PyTorch · TF · ONNX)</span>
+      <span class="tag-pill">MATLAB · C · Python · Go · asm</span>
+      <span class="tag-pill brass">patent strategy · expert witness</span>
+    </div>
+  </section>
+
+  <section class="panel" id="contact">
+    <div class="panel-head">
+      <span class="caption">contact</span>
+    </div>
+    <div class="contact-row">
+      <a href="mailto:yesjhon@gmail.com">→ yesjhon-at-gmail.com</a>
+      <a href="https://www.linkedin.com/in/drjohnusher/">→ linkedin</a>
+      <a href="https://github.com/johnusher">→ github</a>
+      <a href="http://worldwide.espacenet.com/searchResults?locale=en_GB&amp;IN=usher&amp;PA=personics&amp;compact=false&amp;DB=EPODOC">→ patent portfolio</a>
+    </div>
+  </section>
+
+  <div class="footer">
+    ※ assembled with the help of a large language model — which one shall remain a polite mystery.
+  </div>
+
+</div>
 </body>
 </html>
