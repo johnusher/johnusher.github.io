@@ -87,12 +87,16 @@
     .hero h1 em{ color:var(--brass-hi); font-style:normal; white-space:nowrap; }
     .hero p{ margin:0; color:var(--text-mute); max-width:62ch; font-size:14px; }
     .now{
-      margin-top:14px; display:inline-flex; align-items:center; gap:8px;
+      margin-top:14px; display:inline-flex; align-items:center;
+      flex-wrap:wrap; gap:4px 8px;
       padding:7px 11px; background:#0e1018; border:1px solid #1f2230;
       border-radius:var(--r-sm); font-size:12px; color:var(--text-mute);
-      font-family:var(--mono);
+      font-family:var(--mono); max-width:100%;
     }
     .now a{ color:var(--brass-hi); border-bottom-color:rgba(230,184,122,.3); }
+    .now .led{ flex-shrink:0; }
+    .now .nb{ white-space:nowrap; }
+    .now .sep{ color:var(--text-faint); }
     .led{
       width:7px; height:7px; border-radius:50%; background:var(--led-g);
       box-shadow:0 0 6px var(--led-g), 0 0 12px var(--led-g);
@@ -177,15 +181,6 @@
       display:flex; flex-wrap:wrap; gap:14px 18px; font-size:14px; font-family:var(--mono);
     }
 
-    /* ───── FOOTER ───── */
-    .footer{
-      margin-top:22px; padding:14px 16px; font-size:11px; line-height:1.6;
-      color:var(--text-faint); text-align:center;
-      font-family:var(--mono); letter-spacing:.02em;
-    }
-    .footer a{ color:var(--text-mute); border-bottom:none; }
-    .footer a:hover{ color:var(--brass); }
-
     /* ───── DESKTOP ───── */
     @media (min-width:720px){
       .frame{ padding:28px 24px 72px; }
@@ -225,7 +220,11 @@
     <p>Low-latency, low-power audio algorithms — classical DSP and modern ML — running where the silicon is small and the milliwatt budget is smaller. Principal inventor on patents shipped in billions of earphones.</p>
     <div class="now">
       <span class="led" aria-hidden="true"></span>
-      now: lead sound engineer @ <a href="https://mimi.io">mimi.io</a> &nbsp;·&nbsp; 50+ patents &nbsp;·&nbsp; plotting what's next
+      <span class="nb">lead sound engineer @&nbsp;<a href="https://mimi.io">mimi.io</a></span>
+      <span class="sep">·</span>
+      <span class="nb">50+ patents</span>
+      <span class="sep">·</span>
+      <span class="nb">plotting what's next</span>
     </div>
   </div>
 
@@ -331,12 +330,12 @@
       </div>
 
       <div class="t-item">
-        <span class="t-when">2018→</span>
+        <span class="t-when">2021→24</span>
         <span class="t-what">Audio group at <strong>Synaptics</strong> — next-generation telecoms DSP &amp; ML for speech enhancement.</span>
       </div>
 
       <div class="t-item">
-        <span class="t-when">2014→</span>
+        <span class="t-when">2016→20</span>
         <span class="t-what">Co-founder, <strong>Nautic Audio</strong> — carbon-fibre active loudspeaker, voiced with Amon Tobin.</span>
       </div>
 
@@ -346,8 +345,8 @@
       </div>
 
       <div class="t-item">
-        <span class="t-when">2004→06</span>
-        <span class="t-what"><strong>IMM Sound → Dolby</strong> — co-developed the loudspeaker upmix algorithm now part of <strong>Dolby Atmos</strong> (US 8,335,330). Small, Oscar-winning technical team.</span>
+        <span class="t-when">2009→11</span>
+        <span class="t-what"><strong>IMM Sound → Dolby</strong> <em>(hiatus from Personics)</em> — co-developed the loudspeaker upmix algorithm now part of <strong>Dolby Atmos</strong> (US 8,335,330). Small, Oscar-winning technical team.</span>
       </div>
 
       <div class="t-item">
@@ -392,9 +391,6 @@
     </div>
   </section>
 
-  <div class="footer">
-    ※ assembled with the help of a large language model — which one shall remain a polite mystery.
-  </div>
 
 </div>
 </body>
