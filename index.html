@@ -290,7 +290,7 @@
       <article class="project wide">
         <a class="thumb" href="https://github.com/johnusher/racoon_alert">
           <img loading="lazy" src="images/raccoon.jpg"
-               alt="Infrared night-camera frame, 22:25 — a raccoon climbing over the back of a garden bench">
+               alt="The detector's own output: an infrared night-camera frame at 03:53, a red box drawn round the raccoon and a RACCOON DETECTED banner">
         </a>
         <div>
           <div class="pj-head">
@@ -298,7 +298,7 @@
             <span class="pj-meta">2026 · python · onvif · megadetector · speciesnet</span>
           </div>
           <p style="margin-top:8px">I live in Berlin, and raccoons were raiding my pond — bothering the sticklebacks and the bitterling. I wanted to see how they were breaking in.</p>
-          <p style="margin-top:8px">It turned into a garden camera system with no vendor cloud anywhere in it, and reverse-engineering the cheap Wi-Fi camera is what settled that: its pan/tilt runs through the manufacturer’s servers in plaintext, so that part is written up and parked rather than shipped, and everything useful comes over RTSP and <strong style="color:var(--text)">ONVIF</strong> instead — the open standard that lets you talk to these cameras without their app. Video goes into a single Go media server on the LAN and plays sub-second in a browser; the target is that box standing alone on a Raspberry Pi with an HDMI screen and no route out. Nights are the hard part: <strong style="color:var(--text)">MegaDetector</strong> finds the animal in the infrared frame and <strong style="color:var(--text)">SpeciesNet</strong> — 65 million camera-trap images — names the species and is allowed to overrule it, which is why a black cat in the bushes is no longer e-mailed home as <em>person&nbsp;0.74</em>. A stone bench had already fired 56 false person alerts in one day, so a detection now has to out-move the wobble that spot shows while nothing is happening there. The useful thing learned: viewing is cheap and detecting is not — MegaDetector at 1280&nbsp;px is about five times a whole Pi&nbsp;5 for one camera at 3&nbsp;fps, so the standalone box needs an NPU.</p>
+          <p style="margin-top:8px">No vendor cloud anywhere in it. Reverse-engineering the camera settled that: its pan/tilt runs through the manufacturer’s servers in plaintext, so everything useful comes over RTSP and <strong style="color:var(--text)">ONVIF</strong> instead — the open standard these cameras speak without their app. Nights are the hard part: <strong style="color:var(--text)">MegaDetector</strong> finds the animal in the infrared frame and <strong style="color:var(--text)">SpeciesNet</strong> names the species, which is why a black cat in the bushes is no longer e-mailed home as <em>person 0.74</em>. Next is the whole thing standing alone on a Raspberry Pi with no route out — though detecting, unlike viewing, needs an NPU to keep up.</p>
           <div class="pj-links" style="margin-top:10px">
             <a href="https://github.com/johnusher/racoon_alert">→ source</a>
             <a href="https://github.com/johnusher/racoon_alert/blob/main/detector/samples/20260816_035358_animal.mp4">→ the 03:53 clip</a>
